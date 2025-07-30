@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.0
+  email_validator: ^3.0.0
 
   cupertino_icons: ^1.0.8
 
