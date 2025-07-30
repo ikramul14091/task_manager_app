@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_app/ui/screens/splash_sceen.dart';
 
 class TaskManagerApp extends StatelessWidget {
@@ -37,7 +38,11 @@ class TaskManagerApp extends StatelessWidget {
           style: TextButton.styleFrom(foregroundColor: Colors.green),
         ),
       ),
-      home: SplashSceen(),
+      initialRoute: '/',
+      routes: {
+        SplashSceen.name : (context) => SplashSceen(),
+        SignInScreen.name : (context) => SignInScreen(),
+      },
     );
   }
 }

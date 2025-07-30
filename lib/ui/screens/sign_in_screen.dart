@@ -1,13 +1,12 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
-
-import '../utils/asset_paths.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  static const String name = '/sign-in';
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
