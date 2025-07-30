@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/change_password_screen.dart';
+import 'package:task_manager_app/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/screens/splash_screen.dart';
+import 'ui/screens/pin_verification_screen.dart';
 
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
@@ -41,9 +44,13 @@ class TaskManagerApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        SplashScreen.name : (context) => SplashScreen(),
-        SignInScreen.name : (context) => SignInScreen(),
-        SignUpScreen.name : (context) => SignUpScreen(),
+        SplashScreen.name: (context) => SplashScreen(),
+        SignInScreen.name: (context) => SignInScreen(),
+        SignUpScreen.name: (context) => SignUpScreen(),
+        ForgotPasswordEmailScreen.name: (context) =>
+            ForgotPasswordEmailScreen(),
+        PinVerificationScreen.name: (context) => PinVerificationScreen(),
+        ChangePasswordScreen.name: (context) => ChangePasswordScreen(),
       },
     );
   }

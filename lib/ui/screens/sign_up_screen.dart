@@ -16,7 +16,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _firstNameTEController = TextEditingController();
   final TextEditingController _lastNameTEController = TextEditingController();
-  final TextEditingController _phoneNumberTEController = TextEditingController();
+  final TextEditingController _phoneNumberTEController =
+      TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -43,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _emailTEController,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'Email'),
+                    decoration: InputDecoration(hintText: 'Enter your email..'),
                     validator: (String? value) {
                       String email = value ?? '';
                       if (EmailValidator.validate(email) == false) {
@@ -56,10 +57,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _firstNameTEController,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'First Name'),
+                    decoration: InputDecoration(
+                      hintText: 'Enter your first name..',
+                    ),
                     validator: (String? value) {
                       if (value?.trim().isEmpty ?? true) {
-                        return 'Please enter first name!';
+                        return 'Please enter your first name!';
                       }
                       return null;
                     },
@@ -68,10 +71,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _lastNameTEController,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'Last Name'),
+                    decoration: InputDecoration(
+                      hintText: 'Enter your last name..',
+                    ),
                     validator: (String? value) {
                       if (value?.trim().isEmpty ?? true) {
-                        return 'Please enter last name!';
+                        return 'Please enter your last name!';
                       }
                       return null;
                     },
@@ -81,10 +86,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _phoneNumberTEController,
                     keyboardType: TextInputType.phone,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'Mobile Number'),
+                    decoration: InputDecoration(
+                      hintText: 'Enter your mobile number..',
+                    ),
                     validator: (String? value) {
                       if (value?.trim().isEmpty ?? true) {
-                        return 'Please enter mobile number!';
+                        return 'Please enter your mobile number!';
                       }
                       return null;
                     },
@@ -93,9 +100,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _passwordTEController,
                     obscureText: true,
-                    decoration: InputDecoration(hintText: 'Password'),
+                    decoration: InputDecoration(
+                      hintText: 'Enter your password..',
+                    ),
                     validator: (String? value) {
-                      if ((value?.length ?? 0) <=6) {
+                      if ((value?.length ?? 0) <= 6) {
                         return 'Please enter a valid password!';
                       }
                       return null;
@@ -142,7 +151,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onTapSignUpButton() {
     if (_formkey.currentState!.validate()) {
-      //TODO: Sign In with API
+      //TODO: Sign Up with API
     }
   }
 

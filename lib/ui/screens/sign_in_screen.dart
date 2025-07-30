@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 
@@ -40,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextFormField(
                     controller: _emailTEController,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'Email'),
+                    decoration: InputDecoration(hintText: 'Enter your email..'),
                     validator: (String? value) {
                       String email = value ?? '';
                       if (EmailValidator.validate(email) == false) {
@@ -53,7 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextFormField(
                     controller: _passwordTEController,
                     obscureText: true,
-                    decoration: InputDecoration(hintText: 'Password'),
+                    decoration: InputDecoration(hintText: 'Enter your password..'),
                     validator: (String? value) {
                       if ((value?.length ?? 0) <=6) {
                         return 'Please enter a valid password!';
@@ -117,7 +118,9 @@ class _SignInScreenState extends State<SignInScreen> {
     }
   }
 
-  void _onTapForgotPasswordButton() {}
+  void _onTapForgotPasswordButton() {
+    Navigator.pushNamed(context, ForgotPasswordEmailScreen.name);
+  }
 
   void _onTapSignUpButton() {
     //TODO: Sign Up with API
