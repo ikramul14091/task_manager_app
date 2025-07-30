@@ -4,16 +4,16 @@ import 'package:task_manager_app/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_app/ui/utils/asset_paths.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 
-class SplashSceen extends StatefulWidget {
-  const SplashSceen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   static const String name = '/';
 
   @override
-  State<SplashSceen> createState() => _SplashSceenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashSceenState extends State<SplashSceen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
