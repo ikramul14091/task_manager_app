@@ -5,6 +5,8 @@ import 'package:task_manager_app/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 
+import 'main_navbar_holder_screen.dart';
+
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
@@ -54,9 +56,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextFormField(
                     controller: _passwordTEController,
                     obscureText: true,
-                    decoration: InputDecoration(hintText: 'Enter your password..'),
+                    decoration: InputDecoration(
+                      hintText: 'Enter your password..',
+                    ),
                     validator: (String? value) {
-                      if ((value?.length ?? 0) <=6) {
+                      if ((value?.length ?? 0) <= 6) {
                         return 'Please enter a valid password!';
                       }
                       return null;
@@ -116,6 +120,11 @@ class _SignInScreenState extends State<SignInScreen> {
     if (_formkey.currentState!.validate()) {
       //TODO: Sign In with API
     }
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      MainNavbarHolderScreen.name,
+      (predicate) => false,
+    );
   }
 
   void _onTapForgotPasswordButton() {

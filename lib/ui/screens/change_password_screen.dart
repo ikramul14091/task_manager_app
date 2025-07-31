@@ -46,6 +46,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   const SizedBox(height: 24),
                   TextFormField(
                     controller: _passwordTEController,
+                    textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       hintText: 'New Password'
                     ),
