@@ -98,9 +98,7 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
   }
 
   void _onTapSubmitButton() {
-    // if (_formkey.currentState!.validate()) {
-    //   //TODO: Sign Up with API
-    // }
+    //TODO: Sign Up with API
     Navigator.pushNamed(context, PinVerificationScreen.name);
   }
 

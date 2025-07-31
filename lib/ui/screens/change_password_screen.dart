@@ -14,7 +14,8 @@ class ChangePasswordScreen extends StatefulWidget {
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final TextEditingController _passwordTEController = TextEditingController();
-  final TextEditingController _confirmPasswordTEController = TextEditingController();
+  final TextEditingController _confirmPasswordTEController =
+      TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
@@ -47,11 +48,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   TextFormField(
                     controller: _passwordTEController,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      hintText: 'New Password'
-                    ),
+                    decoration: InputDecoration(hintText: 'New Password'),
                     validator: (String? value) {
-                      if ((value?.length ?? 0) <=6) {
+                      if ((value?.length ?? 0) <= 6) {
                         return 'Please enter a valid password!';
                       }
                       return null;
@@ -59,9 +58,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                   TextFormField(
                     controller: _confirmPasswordTEController,
-                    decoration: InputDecoration(
-                        hintText: 'Confirm Password'
-                    ),
+                    decoration: InputDecoration(hintText: 'Confirm Password'),
                     validator: (String? value) {
                       if ((value ?? '') != _passwordTEController.text) {
                         return "Confirm password doesn't match!";

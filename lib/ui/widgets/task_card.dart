@@ -24,7 +24,10 @@ class TaskCard extends StatelessWidget {
             Row(
               children: [
                 Chip(
-                  label: Text(_getTaskChipName(), style: TextStyle(color: Colors.white)),
+                  label: Text(
+                    _getTaskChipName(),
+                    style: TextStyle(color: Colors.white),
+                  ),
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   backgroundColor: _getTaskChipColor(),
                   shape: RoundedRectangleBorder(
