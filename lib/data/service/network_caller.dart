@@ -62,8 +62,8 @@ class NetworkCaller {
         headers: {'content-type': 'application/json'},
         body: jsonEncode(body),
       );
-
       _logResponse(url, response);
+
       if (response.statusCode == 200) {
         final decodedJson = jsonDecode(response.body);
         return NetworkResponse(
