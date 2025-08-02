@@ -152,7 +152,7 @@ class _SignInScreenState extends State<SignInScreen> {
     );
 
     if (response.isSuccess) {
-      UserModel userModel = UserModel.fromJson(response.body! ['data']);
+      UserModel userModel = UserModel.fromJson(response.body!['data']);
       String token = response.body!['token'];
 
       await AuthController.saveUserData(userModel, token);
