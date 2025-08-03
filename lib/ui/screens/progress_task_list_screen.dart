@@ -29,22 +29,22 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Visibility(
-          visible: _getProgressTasksInProgress == false,
-          replacement: CenteredCircularProgressIndicator(),
-      child: ListView.builder(
-        itemCount: _progressTaskList.length,
-        itemBuilder: (context, index) {
-          return TaskCard(
-            taskType: TaskType.progress,
-            taskModel: _progressTaskList[index],
-            onStatusUpdate: () {
-              _getProgressTaskList();
-            },
-          );
-        },
-    ),
+      child: Visibility(
+        visible: _getProgressTasksInProgress == false,
+        replacement: CenteredCircularProgressIndicator(),
+        child: ListView.builder(
+          itemCount: _progressTaskList.length,
+          itemBuilder: (context, index) {
+            return TaskCard(
+              taskType: TaskType.progress,
+              taskModel: _progressTaskList[index],
+              onStatusUpdate: () {
+                _getProgressTaskList();
+              },
+            );
+          },
         ),
+      ),
     );
   }
 
@@ -52,8 +52,9 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     _getProgressTasksInProgress = true;
     setState(() {});
 
-    NetworkResponse response = await NetworkCaller
-        .getRequest(url: Urls.getProgressTasksUrl);
+    NetworkResponse response = await NetworkCaller.getRequest(
+      url: Urls.getProgressTasksUrl,
+    );
 
     if (response.isSuccess) {
       List<TaskModel> list = [];
@@ -68,5 +69,4 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     _getProgressTasksInProgress = false;
     setState(() {});
   }
-
 }

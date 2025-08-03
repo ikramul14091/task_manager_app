@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_app/ui/widgets/snack_bar_message.dart';
-
 import '../../data/models/task_model.dart';
 import '../../data/service/network_caller.dart';
 import '../../data/urls.dart';
@@ -166,14 +165,6 @@ class _TaskCardState extends State<TaskCard> {
   Widget? _getTaskStatusTrailing(TaskType type) {
     return widget.taskType == type ? Icon(Icons.check) : null;
   }
-
-  // TODO: Complete this
-  // void _onTapTaskStatus(TaskType type) {
-  //   if (type == widget.taskType) {
-  //     return;
-  //   }
-  //
-  // }
 
   Future<void> _updateTaskStatus(String status) async {
     Navigator.pop(context);

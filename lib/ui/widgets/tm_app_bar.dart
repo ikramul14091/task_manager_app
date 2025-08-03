@@ -26,12 +26,9 @@ class _TMAppBarState extends State<TMAppBar> {
         child: Row(
           children: [
             CircleAvatar(
-              backgroundImage:
-              AuthController.userModel?.photo == null
+              backgroundImage: AuthController.userModel?.photo == null
                   ? null
-                  : MemoryImage(
-                base64Decode(AuthController.userModel!.photo!),
-              ),
+                  : MemoryImage(base64Decode(AuthController.userModel!.photo!)),
             ),
 
             const SizedBox(width: 16),

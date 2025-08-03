@@ -98,7 +98,6 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
   }
 
   void _onTapSubmitButton() {
-    //TODO: Sign Up with API
     Navigator.pushNamed(context, PinVerificationScreen.name);
   }
 
@@ -109,7 +108,6 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
   @override
   void dispose() {
     _emailTEController.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 }

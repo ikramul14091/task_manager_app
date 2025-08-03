@@ -3,7 +3,6 @@ import 'package:task_manager_app/ui/screens/cancelled_task_list_screen.dart';
 import 'package:task_manager_app/ui/screens/completed_task_list_screen.dart';
 import 'package:task_manager_app/ui/screens/new_task_list_screen.dart';
 import 'package:task_manager_app/ui/screens/progress_task_list_screen.dart';
-
 import '../widgets/tm_app_bar.dart';
 
 class MainNavbarHolderScreen extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-
 import '../../app.dart';
 import '../../ui/controllers/auth_controller.dart';
 import '../../ui/screens/sign_in_screen.dart';
@@ -28,7 +27,7 @@ class NetworkCaller {
     try {
       Uri uri = Uri.parse(url);
       final Map<String, String> headers = {
-        'token': AuthController.accessToken ?? ''
+        'token': AuthController.accessToken ?? '',
       };
 
       _logRequest(url, null, headers);
@@ -49,7 +48,7 @@ class NetworkCaller {
           statusCode: response.statusCode,
           errorMessage: _unAuthorizeMessage,
         );
-      }else {
+      } else {
         final decodedJson = jsonDecode(response.body);
         return NetworkResponse(
           isSuccess: false,
@@ -68,14 +67,15 @@ class NetworkCaller {
 
   static Future<NetworkResponse> postRequest({
     required String url,
-    Map<String, String>? body, bool isFromLogin = false
+    Map<String, String>? body,
+    bool isFromLogin = false,
   }) async {
     try {
       Uri uri = Uri.parse(url);
 
       final Map<String, String> headers = {
         'content-type': 'application/json',
-        'token': AuthController.accessToken ?? ''
+        'token': AuthController.accessToken ?? '',
       };
 
       _logRequest(url, body, headers);
@@ -93,7 +93,7 @@ class NetworkCaller {
           statusCode: response.statusCode,
           body: decodedJson,
         );
-      }else if (response.statusCode == 401) {
+      } else if (response.statusCode == 401) {
         if (isFromLogin == false) {
           _onUnAuthorize();
         }
@@ -102,9 +102,7 @@ class NetworkCaller {
           statusCode: response.statusCode,
           errorMessage: _unAuthorizeMessage,
         );
-      }
-
-      else {
+      } else {
         final decodedJson = jsonDecode(response.body);
         return NetworkResponse(
           isSuccess: false,
@@ -121,13 +119,17 @@ class NetworkCaller {
     }
   }
 
-  static void _logRequest(String url, Map<String, String>? body, Map<String, String>? headers) {
+  static void _logRequest(
+    String url,
+    Map<String, String>? body,
+    Map<String, String>? headers,
+  ) {
     debugPrint(
       '===============REQUEST===============\n'
       'URL: $url\n'
       'HEADERS: $headers\n'
       'BODY: $body\n'
-      '=============================='
+      '==============================',
     );
   }
 
@@ -143,8 +145,8 @@ class NetworkCaller {
 
   static Future<void> _onUnAuthorize() async {
     await AuthController.clearData();
-    Navigator.of(TaskManagerApp.navigator.currentContext!)
-        .pushNamedAndRemoveUntil(
-        SignInScreen.name, (predicate) => false);
+    Navigator.of(
+      TaskManagerApp.navigator.currentContext!,
+    ).pushNamedAndRemoveUntil(SignInScreen.name, (predicate) => false);
   }
 }

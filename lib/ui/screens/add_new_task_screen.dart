@@ -73,7 +73,6 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
 
   void _onTapSubmitButton() {
     if (_formkey.currentState!.validate()) {
-      //TODO: Submit your task
     }
     Navigator.pop(context);
   }

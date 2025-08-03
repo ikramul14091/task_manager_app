@@ -124,7 +124,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   void dispose() {
     _passwordTEController.dispose();
     _confirmPasswordTEController.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 }

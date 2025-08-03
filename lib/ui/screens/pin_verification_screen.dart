@@ -104,9 +104,6 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   }
 
   void _onTapSubmitButton() {
-    /*if (_formkey.currentState!.validate()) {
-      //TODO: Sign Up with API
-    }*/
     Navigator.pushNamed(context, ChangePasswordScreen.name);
   }
 
@@ -121,7 +118,6 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   @override
   void dispose() {
     _otpTEController.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 }

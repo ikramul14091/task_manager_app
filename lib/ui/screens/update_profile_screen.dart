@@ -186,7 +186,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   void _onTapSubmitButton() {
     if (_formkey.currentState!.validate()) {
-      //TODO: Update profile with API
     }
   }
 
@@ -197,7 +196,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     _lastNameTEController.dispose();
     _phoneNumberTEController.dispose();
     _passwordTEController.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 }

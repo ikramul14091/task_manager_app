@@ -9,7 +9,6 @@ import 'package:task_manager_app/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_app/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_app/ui/widgets/screen_background.dart';
 import 'package:task_manager_app/ui/widgets/snack_bar_message.dart';
-
 import 'main_navbar_holder_screen.dart';
 
 class SignInScreen extends StatefulWidget {
